@@ -101,19 +101,21 @@ export default function LicenseCheck() {
       setErrors(newArr);
     } else {
       // Example usage of the exposed function
-      window.electronAPI.License.verifyKey({
-        key: licenseKey,
-        userInfo: {
-          agree,
-          data,
-        },
-      })
-        .then((response: any) => {
-          console.log("Received response from main process:", response);
+
+      window.electronAPI &&
+        window.electronAPI.License.verifyKey({
+          key: licenseKey,
+          userInfo: {
+            agree,
+            data,
+          },
         })
-        .catch((error: any) => {
-          console.error("Error:", error);
-        });
+          .then((response: any) => {
+            console.log("Received response from main process:", response);
+          })
+          .catch((error: any) => {
+            console.error("Error:", error);
+          });
     }
   };
 

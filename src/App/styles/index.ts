@@ -25,6 +25,7 @@ export const FormContent = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 24px;
+  flex: 1;
 `;
 
 export const Logo = styled.div`
@@ -42,10 +43,9 @@ export const Description = styled.p`
   color: #888;
 `;
 
-export const LicenseInput = styled.input<any>`
+export const LicenseInput = styled.input`
   padding: 15px 10px;
   border-radius: 8px;
-  flex: 1;
   outline: none;
   app-region: no-drag;
   font-size: 16px;
@@ -55,12 +55,13 @@ export const LicenseInput = styled.input<any>`
 export const Consent = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 18px 0px;
+  padding: 10px 0px;
   align-items: baseline;
   justify-content: start;
   gap: 14px;
   app-region: no-drag;
 `;
+
 export const ConsentLabel = styled.label`
   display: flex;
   align-items: center;
@@ -70,14 +71,18 @@ export const ConsentLabel = styled.label`
 `;
 
 export const Checkbox = styled.input``;
-export const Error = styled.p`
+
+export const Error = styled.span`
   font-size: 15px;
   color: #ff6060;
 `;
 export const ErrorPack = styled.div`
-  flex: 1;
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  flex: 1;
+  row-gap: 5px;
+  column-gap: 10px;
+  padding: 5px;
 `;
 export const CTA = styled.div`
   display: flex;
@@ -97,6 +102,7 @@ export const ActivateBtn = styled.button`
     opacity: 0.8;
   }
 `;
+
 export const TrialBtn = styled.button`
   app-region: no-drag;
   padding: 10px;
@@ -105,6 +111,7 @@ export const TrialBtn = styled.button`
     opacity: 0.6;
   }
 `;
+
 export const GetLicense = styled.u`
   font-size: 15px;
   color: #888;
@@ -112,4 +119,14 @@ export const GetLicense = styled.u`
   &:hover {
     opacity: 0.7;
   }
+`;
+
+export const PermissionsImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const PermissionsImage = styled.img`
+  width: 100%;
+  border-radius: 12px;
 `;

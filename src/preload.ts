@@ -17,5 +17,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
     },
     getText: async () => await ipcRenderer.invoke("license-get-text"),
   },
-  // Add more functions as needed
+  permissions: async (channel: string, data: any) => {
+    const response = await ipcRenderer.invoke(channel, data);
+    return response;
+  },
 });
