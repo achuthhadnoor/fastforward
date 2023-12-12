@@ -42,17 +42,14 @@ export const Description = styled.p`
   color: #888;
 `;
 
-export const LicenseInput = styled.input`
+export const LicenseInput = styled.input<any>`
   padding: 15px 10px;
   border-radius: 8px;
   flex: 1;
   outline: none;
   app-region: no-drag;
-  border: 1px solid #555;
   font-size: 16px;
-  &:hover {
-    border: 1px solid red;
-  }
+  border: ${(props) => (props.valid ? `1px solid red` : `1px solid #555`)};
 `;
 
 export const Consent = styled.div`
